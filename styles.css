@@ -1,11 +1,3 @@
-/* CSS HEX */
---caribbean-current: #007185ff;
---viridian: #2E8A6Cff;
---asparagus: #5DA453ff;
---apple-green: #8BBD39ff;
---pear: #BAD720ff;
---yellow: #E8F007ff;
-
 body,
 html {
   height: 100%;
@@ -86,3 +78,6 @@ html {
   font-size: 16px;
 }
 
+#message {
+  height: 10rem;
+}
