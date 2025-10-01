@@ -1,0 +1,88 @@
+/* CSS HEX */
+--caribbean-current: #007185ff;
+--viridian: #2E8A6Cff;
+--asparagus: #5DA453ff;
+--apple-green: #8BBD39ff;
+--pear: #BAD720ff;
+--yellow: #E8F007ff;
+
+body,
+html {
+  height: 100%;
+}
+
+.bg-gradient-primary-to-secondary {
+  background: #1e30f3;
+  background: linear-gradient(135deg, #007185ff 0%, #E8F007ff 100%);
+}
+
+.text-gradient {
+  background: -webkit-linear-gradient(315deg, #007185ff 0%, #E8F007ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.rounded-4 {
+  border-radius: 1rem !important;
+}
+
+.feature {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 3rem;
+  font-size: 1.5rem;
+}
+
+.profile {
+  position: relative;
+  height: 75vw;
+  width: 75vw;
+  border-radius: 5vw;
+  margin-top: 2vw;
+  max-height: 40rem;
+  max-width: 40rem;
+}
+.profile .profile-img {
+  height: 85vw;
+  max-height: 35rem;
+  position: absolute;
+  top: 20px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar img {
+  height: 40px;
+}
+
+.navbar, #about {
+  border-bottom: 3px solid;
+  border-image: -webkit-linear-gradient(315deg, #007185ff 0%, #E8F007ff 100%);
+  border-image-slice: 1;
+}
+
+#about {
+  border-bottom: 3px solid;
+  border-top: 3px solid;
+  border-image: -webkit-linear-gradient(315deg, #007185ff 0%, #E8F007ff 100%);
+  border-image-slice: 1;
+}
+
+#contact {
+  border-bottom: 3px solid;
+  border-top: 3px solid;
+  border-image: -webkit-linear-gradient(315deg, #007185ff 0%, #E8F007ff 100%);
+  border-image-slice: 1;
+}
+
+.footer_logo img {
+  height: 60px;
+}
+
+.col-auto span {
+  font-size: 16px;
+}
+
