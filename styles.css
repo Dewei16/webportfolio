@@ -70,14 +70,3 @@ html {
   border-image-slice: 1;
 }
 
-.footer_logo img {
-  height: 60px;
-}
-
-.col-auto span {
-  font-size: 16px;
-}
-
-#message {
-  height: 10rem;
-}
