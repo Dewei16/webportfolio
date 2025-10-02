@@ -20,6 +20,62 @@ html {
   -webkit-text-fill-color: transparent;
 }
 
+/* Reset Bootstrap hover */
+.btn-outline-dark:hover,
+.btn-outline-dark:focus,
+.btn-outline-dark:active {
+  background: none !important;
+  color: #000 !important; /* text stays dark */
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Custom border animation */
+.btn-outline-dark {
+  position: relative;
+  border: none; /* remove Bootstrap border */
+  color: #000;
+  overflow: hidden;
+}
+
+.btn-outline-dark::before,
+.btn-outline-dark::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 2px solid transparent;
+  transition: all 0.4s ease;
+}
+
+.btn-outline-dark::before {
+  top: 0;
+  left: 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+
+.btn-outline-dark::after {
+  bottom: 0;
+  right: 0;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+}
+
+.btn-outline-dark:hover::before {
+  width: 100%;
+  height: 100%;
+  border-top-color: #007185ff;
+  border-left-color: #E8F007ff;
+}
+
+.btn-outline-dark:hover::after {
+  width: 100%;
+  height: 100%;
+  border-bottom-color: #007185ff;
+  border-right-color: #E8F007ff;
+}
+
 .rounded-4 {
   border-radius: 1rem !important;
 }
@@ -54,6 +110,66 @@ html {
 
 .navbar img {
   height: 40px;
+}
+
+.navbar {
+  display: flex;
+  gap: 20px;
+  background-color: #fff;
+  padding: 10px 20px;
+}
+
+.navbar-nav .nav-link {
+  position: relative;
+  color: #007185ff; /* adjust for dark background */
+  padding-bottom: 5px; /* space for underline */
+  text-decoration: none;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background: -webkit-linear-gradient(315deg, #007185ff 0%, #E8F007ff 100%);
+  transition: width 0.4s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Keep underline for active page */
+.navbar-nav .nav-link.active::after {
+  width: 100%;
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: fadeInLeft 2s ease-out forwards;
+}
+
+@keyframes fadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  animation: fadeInLeft 2s ease-out forwards;
+}
+
+@keyframes fadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .navbar, #about {
@@ -98,3 +214,62 @@ iframe {
 .bg-gradient-primary-to-secondary {
     background: linear-gradient(315deg, #007185 0%, #E8F007 100%);
 }
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 2s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add delay for staggered fade-in */
+.fade-in:nth-child(1) { animation-delay: 1.2s; }
+.fade-in:nth-child(2) { animation-delay: 1.6s; }
+.fade-in:nth-child(3) { animation-delay: 2s; }
+.fade-in:nth-child(4) { animation-delay: 2.4s; }
+.fade-in:nth-child(5) { animation-delay: 2.8s; }
+.fade-in:nth-child(6) { animation-delay: 3.2s; }
+
+/* Hover bounce effect */
+.card {
+  transition: transform .3s ease;
+}
+
+.card:hover {
+  animation: bounce 1.5s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Fade-up animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 2s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up:nth-child(1) { animation-delay: 0.8s; }
+.fade-up:nth-child(2) { animation-delay: 1.2s; }
+.fade-up:nth-child(3) { animation-delay: 1.6s; }
+.fade-up:nth-child(4) { animation-delay: 2.0s; }
